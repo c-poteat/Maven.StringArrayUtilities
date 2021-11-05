@@ -1,5 +1,15 @@
 package com.zipcodewilmington;
 
+import javafx.util.converter.DoubleStringConverter;
+import sun.security.util.ArrayUtil;
+
+import javax.xml.bind.SchemaOutputResolver;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -25,7 +35,7 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-        return null;
+        return array[array.length-1];
     }
 
     /**
@@ -33,7 +43,7 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
-        return null;
+        return array[array.length-2];
     }
 
     /**
@@ -42,7 +52,11 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        return false;
+        if(contains(array, value)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -50,7 +64,12 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        return null;
+        String[] newStringArray = new String[array.length];
+        for (int i = 0; i < array.length; i++) {
+            newStringArray[array.length - 1 - i] = array[i];
+
+        }
+        return (newStringArray);
     }
 
     /**
@@ -58,9 +77,17 @@ public class StringArrayUtils {
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-        return false;
-    }
+        StringBuilder newString = new StringBuilder();
+        for (int i = 0; i < array.length; i++) {
+            newString.append(array[i]);
 
+        }
+        String str = newString.toString();
+        if (str == str.reverse().toString()) {
+        }
+        System.out.println(str);
+        return true;
+}
     /**
      * @param array array of String objects
      * @return true if each letter in the alphabet has been used in the array
@@ -84,14 +111,21 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
+            List<String> list = Arrays.asList(array);
+            list.remove(valueToRemove);
+        System.out.println(list);
         return null;
-    }
+        }
+
+
+
 
     /**
      * @param array array of chars
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
+        System.out.println(array);
         return null;
     }
 
