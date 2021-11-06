@@ -26,14 +26,29 @@ public class IsPangramicTest {
         Assert.assertTrue(outcome);
     }
 
-
+    @Test
+    public void testIsPangramic3a() {
+        String[] array = {"Five quacking", "zephyrs", "jolt my", "wax bed", "f"};
+        boolean outcome = StringArrayUtils.isPangramic(array);
+        Assert.assertTrue(outcome);
+    }
     @Test
     public void testIsPangramic4() {
         String[] array = {"a", "b", "c", "d"};
         boolean outcome = StringArrayUtils.isPangramic(array);
         Assert.assertFalse(outcome);
     }
+    @Test
+    public void testIsPangramic5() {
+        String[] array = {"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"};
+        boolean outcome = StringArrayUtils.isPangramic(array);
+        Assert.assertFalse(outcome);
+    }
+    @Test
+    public void testIsPangramic6() {
+        String[] array = {"a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"};
+        boolean outcome = StringArrayUtils.isPangramic(array);
+        Assert.assertFalse(outcome);
 
-
-
+    }
 }
